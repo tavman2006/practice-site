@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quiz — HTTP Self Assessment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header-small">
+    <h1>Self-Assessment Quiz</h1>
+    <nav><ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="topic1.html">History</a></li>
+      <li><a href="topic2.html">Modern HTTP</a></li>
+      <li><a href="concepts.html">Key Concepts</a></li>
+      <li><a href="references.html">References</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="quiz.html" class="cta">Quiz</a></li>
+    </ul></nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <p class="small">Instructions: Answer all questions then click <strong>Submit</strong>. You will see immediate feedback, a per-question breakdown, and an overall PASS/FAIL result. Use <strong>Reset / Retake</strong> to clear.</p>
+
+      <form id="quizForm" class="quiz-form" onsubmit="return false;">
+        <!-- Q1: fill-in-the-blank -->
+        <div class="q">
+          <label><strong>Q1 (fill-in):</strong> The transport protocol originally used by HTTP that guarantees ordered delivery is
+            <input type="text" id="q1" name="q1" placeholder="type answer (e.g., TCP)"></label>
+          <div id="f1" class="feedback"></div>
+        </div>
+
+        <!-- Q2: MC single-answer -->
+        <div class="q">
+          <p><strong>Q2 (multiple-choice):</strong> Which version introduced multiplexing on a single connection?</p>
+          <label><input type="radio" name="q2" value="1.0"> HTTP/1.0</label><br>
+          <label><input type="radio" name="q2" value="1.1"> HTTP/1.1</label><br>
+          <label><input type="radio" name="q2" value="2"> HTTP/2</label>
+          <div id="f2" class="feedback"></div>
+        </div>
+
+        <!-- Q3: MC single-answer -->
+        <div class="q">
+          <p><strong>Q3 (multiple-choice):</strong> Which transport protocol does HTTP/3 use?</p>
+          <label><input type="radio" name="q3" value="tcp"> TCP</label><br>
+          <label><input type="radio" name="q3" value="udp"> UDP</label><br>
+          <label><input type="radio" name="q3" value="quic"> QUIC</label>
+          <div id="f3" class="feedback"></div>
+        </div>
+
+        <!-- Q4: MC single-answer -->
+        <div class="q">
+          <p><strong>Q4 (multiple-choice):</strong> Which protocol inspired HTTP/2 and introduced multiplexing?</p>
+          <label><input type="radio" name="q4" value="spdy"> SPDY</label><br>
+          <label><input type="radio" name="q4" value="gzip"> GZIP</label><br>
+          <label><input type="radio" name="q4" value="tls"> TLS</label>
+          <div id="f4" class="feedback"></div>
+        </div>
+
+        <!-- Q5: multi-select (more than one correct) -->
+        <div class="q">
+          <p><strong>Q5 (multi-select):</strong> Select all items that are examples of encrypted/secure web transport:</p>
+          <label><input type="checkbox" name="q5" value="https"> HTTPS</label><br>
+          <label><input type="checkbox" name="q5" value="ssl"> SSL</label><br>
+          <label><input type="checkbox" name="q5" value="spdy"> SPDY</label><br>
+          <label><input type="checkbox" name="q5" value="quic"> QUIC</label>
+          <div id="f5" class="feedback"></div>
+        </div>
+
+        <div class="controls">
+          <button id="submitBtn" class="btn" type="button">Submit</button>
+          <button id="resetBtn" class="btn secondary" type="button">Reset / Retake</button>
+        </div>
+      </form>
+
+      <section id="results" aria-live="polite"></section>
+    </section>
+  </main>
+
+  <footer>
+    <p>This is a class project for IT 3203. <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">Course site</a></p>
+  </footer>
+
+  <script src="quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* style.css — UTF-8 encoded. Comments explain which selectors/types are used. */
+
+/* ---------- element selector (type) ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f7f9fb;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* ---------- class selector ---------- */
+.container {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ---------- id selector (example will be used in JS results) ---------- */
+#results { margin-top: 16px; }
+
+/* Navigation: flex layout (demonstrates layout requirement) */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #2c3e50;
+}
+.main-nav li { margin: 0; }
+.main-nav a {
+  display: block;
+  padding: 12px 16px;
+  color: #fff;
+  text-decoration: none;
+}
+/* Hover effect on links (requirement) */
+.main-nav a:hover, .main-nav a:focus { background: #405a70; }
+
+/* CTA style (class selector usage) */
+.cta { background: #2a9d8f; border-radius: 4px; margin-left: 8px; padding: 10px 12px; }
+
+/* Grid layout example (demonstrates CSS Grid or Flex) */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+/* Card style (element + class combined) */
+.card {
+  background: #fff;
+  border: 1px solid #e1e6ea; /* border requirement */
+  padding: 16px; /* padding requirement */
+  border-radius: 8px;
+}
+
+/* small text class */
+.small { font-size: 0.95rem; color: #6c7a89; }
+
+/* Footer */
+footer { background: #222; color: #fff; padding: 12px; text-align: center; margin-top: 40px; }
+
+/* Quiz specific */
+.quiz-form .q { margin-bottom: 12px; }
+.quiz-form input[type="text"] { padding: 6px; border-radius: 4px; border: 1px solid #cbd6dd; width: 60%; }
+
+/* Buttons */
+.btn { background: #2a9d8f; color: #fff; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; }
+.btn.secondary { background: #7f8c8d; }
+
+/* Results visual styles (color + border) */
+.result-pass { background: rgba(42,157,143,0.08); border: 1px solid rgba(42,157,143,0.2); color: #2a9d8f; padding: 12px; border-radius: 8px; }
+.result-fail { background: rgba(231,76,60,0.06); border: 1px solid rgba(231,76,60,0.15); color: #e74c3c; padding: 12px; border-radius: 8px; }
+
+/* Per-question feedback */
+.feedback { margin-top: 8px; font-weight: 600; }
+.correct { color: #2ecc71; }
+.incorrect { color: #e74c3c; }
+
+/* Responsive adjustments */
+@media (max-width: 760px) {
+  .grid-layout { grid-template-columns: 1fr; }
+  .main-nav { justify-content: center; }
+  .quiz-form input[type="text"] { width: 100%; }
+}
